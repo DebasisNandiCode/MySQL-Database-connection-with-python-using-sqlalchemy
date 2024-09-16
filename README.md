@@ -1,26 +1,17 @@
-# MySQL-Database-connection-with-python-using-sqlalchemy
+# MySQL Database Connection with Python using SQLAlchemy
 
-import pandas as pd
-import pymysql
-from sqlalchemy import create_engine
-import urllib.parse
+This project demonstrates how to establish a connection to a MySQL database using Python and SQLAlchemy. It also includes an example of how to perform a simple SQL query and fetch data from a MySQL database.
 
-username = 'xxxxxxxxx'
-password = 'xxxxxxxxx'
-password_encoded = urllib.parse.quote(password)
-server = 'XX.XX.XX.XX'
-port = xxxx
-database = ''
+## Requirements
 
-conn_string = f'mysql+pymysql://{username}:{password_encoded}@{server}:{port}/{database}'
+To run this code, you need the following Python packages installed:
 
-sql_query = ('select *'
-            ' from Phone_cloud.call_files_New'
-            ' limit 100;'
-            )
+- `pandas`
+- `pymysql`
+- `sqlalchemy`
+- `urllib`
 
-engine = create_engine(conn_string)
+You can install these dependencies using `pip`:
 
-df = pd.read_sql(sql_query, con=engine)
-
-df
+```bash
+pip install pandas pymysql sqlalchemy
